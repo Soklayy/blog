@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Bayon:wght@300;400;500;700&family=Hanuman:wght@300;400;500;700&family=Caprasimo&family=Poppins:wght@300;400;500;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+
+  * {
+    @apply font-hanuman scroll-smooth
+  }
+
+  #root {
+    @apply h-screen w-screen overflow-y-auto relative
+  }
+
+  nav a.active {
+    @apply text-green-500
+  }
+}
+
+@layer components {
+  .closeMenu {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .openMenu {
+    clip-path: polygon(0 0, 100% 0, 100% 99%, 0 99%);
+  }
+
+  article {
+    @apply max-w-6xl px-5 w-full bg-gray-200 lg:rounded-md pb-10 pt-10 mt-10
+  }
+
+  .header {
+    background-image: linear-gradient(90deg, rgba(24, 52, 253, 1) 0%, rgba(0, 255, 3, 1) 100%);
+    -webkit-background-clip: text;
+    /* Use standard background-clip for modern browsers */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Use standard text-fill-color for modern browsers */
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+  }
+
+  .primary-button{
+    @apply hover:bg-green-400 bg-green-500 px-5 py-2 text-sm shadow-sm hover:shadow-lg tracking-wider hover:border-green-500 text-center text-white rounded-full uppercase font-bold w-full
+  }
+}

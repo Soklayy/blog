@@ -1,0 +1,25 @@
+{
+    "contact":"Contact Me",
+    "skill": "Skill",
+    "social_media": "Social media",
+    "save":"save",
+    "read": "read article",
+    "articles":"articles",
+    "logout":"logout",
+    "all_articles":"articles",
+    "comments":"comments",
+    "menu": [
+        {
+            "title": "home",
+            "url": "/"
+        },
+        {
+            "title": "blogs",
+            "url": "/blogs"
+        },
+        {
+            "title": "about",
+            "url": "/about-us"
+        }
+    ]
+}
