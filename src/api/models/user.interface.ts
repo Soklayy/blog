@@ -10,5 +10,5 @@ export interface IUser {
     logginProvider?:string;
     birthdate?:string;
     createdAt?: string;
-    updatedAt?: string
+    updatedAt?: string;
 }
