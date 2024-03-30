@@ -16,7 +16,7 @@ import { useTranslation } from 'react-i18next';
 const Profile = () => {
   const { t } = useTranslation()
   const auth = useAppSelector(state => state.auth)
-  const [user, setUser] = useState<IUser>(() => auth.user || {})
+  const [user, setUser] = useState<IUser>(() => auth?.user || {})
   const navigate = useNavigate()
   const dispatch = useAppDispatch()
   const [loading, setLoading] = useState<boolean>(false)
@@ -59,13 +59,13 @@ const Profile = () => {
 
   }
   return (
-    <div className="bg-white min-h-[calc(100%-17rem)] rounded-lg p-5 space-y-2">
+    <div className="bg-white min-h-[calc(100%-13rem)] rounded-lg p-5 space-y-2 max-w-3xl m-auto my-2 sm:border">
       <div className="flex justify-between items-center">
-        <div className="flex items-center">
-          <div className='relative'>
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          <div className='relative h-20 w-20'>
             <img
               src={('string' == typeof profileImage) ? profileImage as string : URL.createObjectURL(profileImage as File)}
-              className="h-20 w-20 rounded-full object-cover"
+              className="rounded-full object-cover"
             />
             <div>
               <label htmlFor="profile"><BiEdit className='absolute bottom-0 -right-0 text-white bg-green-600 p-[.1rem] text-xl rounded-full cursor-pointer file:' title='Edit profile' /></label>
@@ -81,9 +81,9 @@ const Profile = () => {
               />
             </div>
           </div>
-          <div className="ml-5">
+          <div className="sm:ml-5">
             <h1 className="dark:text-gray-200 font-bold">{user?.lastname} {user?.firstname}</h1>
-            <div className="flex items-center">
+            <div className="flex sm:items-center">
               <MdEmail className="text-sm" />
               <span className='text-xs ml-2'>{user?.email}</span>
             </div>

@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="gap-3 bg-gray-900 grid grid-cols-1 lg:grid-cols-2 lg:px-8 px-2 py-10">
             <div className="flex items-center gap-10 justify-center">
-                <Link to={'/'} className="text-sm lg:text-3xl font-bayon text-white font-bold uppercase flex items-center border-r h-full px-4">ឡា<span className="text-green-500 font-bayon flex items-center">យ.</span></Link>
+                <Link to={'/'} className="text-3xl font-bayon text-white font-bold uppercase flex items-center border-r h-full px-4">ឡា<span className="text-green-500 font-bayon flex items-center">យ.</span></Link>
                 <div className="space-y-3 flex flex-col justify-center items-start">
                     <div className="flex gap-4 text-sm lg:text-base text-slate-300">
                         {

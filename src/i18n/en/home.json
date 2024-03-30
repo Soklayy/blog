@@ -4,6 +4,6 @@
     "firstname": "firstname",
     "lastname": "lastname",
     "birthdate": "Date of birth",
-    "persional_info": "Persional infomations",
+    "persional_info": "Persional informations",
     "login_provider" : "Login provider"
 }
