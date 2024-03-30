@@ -30,7 +30,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (!auth?.user?.id) {
-      navigate('/')
+      // navigate('/')
     }
   }, [auth?.user])
   const saveHandler = () => {
@@ -65,7 +65,7 @@ const Profile = () => {
           <div className='relative h-20 w-20'>
             <img
               src={('string' == typeof profileImage) ? profileImage as string : URL.createObjectURL(profileImage as File)}
-              className="rounded-full object-cover"
+              className="rounded-full w-full h-full object-cover"
             />
             <div>
               <label htmlFor="profile"><BiEdit className='absolute bottom-0 -right-0 text-white bg-green-600 p-[.1rem] text-xl rounded-full cursor-pointer file:' title='Edit profile' /></label>
