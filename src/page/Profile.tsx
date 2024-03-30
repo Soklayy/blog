@@ -30,7 +30,7 @@ const Profile = () => {
 
   useEffect(() => {
     if (!auth?.user?.id) {
-      // navigate('/')
+      navigate('/')
     }
   }, [auth?.user])
   const saveHandler = () => {
