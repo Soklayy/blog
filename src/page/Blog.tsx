@@ -1,11 +1,28 @@
 import { useTranslation } from "react-i18next"
-import { IBlog } from "../api/models/blog.interface"
 import BlogCard from "../components/blog/BlogCard"
-import { useGet } from "../hook/useFetch"
+import { useEffect } from "react"
+import { useAppDispatch, useAppSelector } from "../redux/hook"
+import { axiosInstance } from "../api/axios.instance"
+import { setBlogs } from "../redux/feature/blog.slide"
 
 const Blog = () => {
     const { t } = useTranslation()
-    const [data] = useGet<IBlog[]>(`blog`)
+    const blogs = useAppSelector(state => state.blogs.data)
+    const dispatch = useAppDispatch()
+
+    useEffect(() => {
+        if (blogs.length == 0) {
+            axiosInstance.get('/blog')
+                .then((res) => {
+                    console.log(res.data)
+                    dispatch(setBlogs(res?.data))
+                })
+                .catch((erro) => {
+                    console.log(erro?.response?.data)
+                })
+        }
+
+    }, [])
     return (
         <section className="flex flex-col min-h-[calc(100%-13.25rem)] py-5 px-10">
             <div className="relative flex justify-center py-5">
@@ -14,8 +31,8 @@ const Blog = () => {
                     {t('articles', { ns: 'button' })}
                 </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-                {data?.map((blog, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                {blogs.map((blog, index) => (
                     <BlogCard key={index} {...blog} />
                 ))}
             </div>

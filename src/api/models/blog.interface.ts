@@ -9,7 +9,7 @@ export interface IBlog {
     isPublic?: boolean;
     thumbnail?: IThumbnail;
     comment?: IComment[];
-    like: number;
+    like?: number;
     isLike?:any
     createdAt?: string;
     updatedAt?: string;

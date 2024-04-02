@@ -4,7 +4,7 @@ import Header from "./components/common/Header";
 import Home from "./page/Home";
 import Blog from "./page/Blog";
 // import Project from "./page/Project";
-import Detail from "./components/blog/Detail";
+import Detail from "./page/Detail";
 import About from "./page/About";
 import Login from "./page/Login";
 import Profile from "./page/Profile";

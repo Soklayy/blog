@@ -20,7 +20,6 @@ export const authSlice = createSlice({
         state.accessToken = action.payload.accessToken
       }
       if (action.payload.user) {
-
         localStorage.setItem('user', JSON.stringify(action.payload.user))
         state.user = action.payload.user
       }
