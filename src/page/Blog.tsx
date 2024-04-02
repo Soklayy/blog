@@ -14,7 +14,6 @@ const Blog = () => {
         if (blogs.length == 0) {
             axiosInstance.get('/blog')
                 .then((res) => {
-                    console.log(res.data)
                     dispatch(setBlogs(res?.data))
                 })
                 .catch((erro) => {
